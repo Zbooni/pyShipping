@@ -106,6 +106,24 @@ class Package(object):
         """Enables to sort by Volume."""
         return cmp(self.volume, other.volume)
 
+    def __lt__(self, other):
+        return self.volume < other.volume
+
+    def __le__(self, other):
+        return self.volume <= other.volume
+
+    def __eq__(self, other):
+        return self.volume == other.volume
+
+    def __ne__(self, other):
+        return self.volume != other.volume
+
+    def __gt__(self, other):
+        return self.volume > other.volume
+
+    def __ge__(self, other):
+        return self.volume >= other.volume
+
     def __mul__(self, multiplicand):
         """Package can be multiplied with an integer. This results in the Package beeing
            stacked along the biggest side.
